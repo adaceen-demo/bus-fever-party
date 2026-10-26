@@ -1,0 +1,8 @@
+# Compilado
+build/*
+!build/.gitkeep
+busfever
+busfever.exe
+*.o
+*.d
+*.exe

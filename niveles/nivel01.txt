@@ -1,0 +1,14 @@
+# Bus Fever Party - Nivel 1
+# Formato: ver src/modelo/CCargadorNivel.h o el README.
+# Las líneas que empiezan con # son comentarios y las vacías se ignoran.
+
+NOMBRE Primer viaje
+TABLERO 4 4
+ESPERA 3
+
+# VEHICULO <color> <capacidad> <columna> <renglon> <direccion>
+VEHICULO R 3 0 0 ABAJO
+VEHICULO A 3 3 3 ARRIBA
+
+# Pasajeros del frente (izquierda) al final: 3 rojos y 3 azules
+FILA RRRAAA

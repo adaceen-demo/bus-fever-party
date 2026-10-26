@@ -1,0 +1,15 @@
+# Bus Fever Party - Nivel 2
+# Cuatro colores; los pasajeros llegan mezclados.
+
+NOMBRE Hora pico
+TABLERO 5 5
+ESPERA 4
+
+# VEHICULO <color> <capacidad> <columna> <renglon> <direccion>
+VEHICULO R 4 0 0 DERECHA
+VEHICULO A 4 1 0 ABAJO
+VEHICULO V 2 4 2 IZQUIERDA
+VEHICULO M 2 2 4 ARRIBA
+
+# 4 R, 4 A, 2 V y 2 M (coincide con las capacidades de cada color)
+FILA RRAVAMRAAVMR

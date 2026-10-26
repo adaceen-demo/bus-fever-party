@@ -1,0 +1,18 @@
+' PLANTILLA para documentar una clase en UML.
+' Copie el bloque class por cada clase de su diseño y complete atributos y métodos.
+' Use el símbolo de relación correcto y la multiplicidad en cada extremo.
+@startuml
+class CNombreDeLaClase {
+- atributo: tipo
++ metodo1(parametros): tipoRetorno
++ metodo2(parametros): tipoRetorno
+}
+
+' Símbolos de relación (borre los que no use):
+' CNombreDeLaClase "1" *-- "0..*" COtraClase : composición
+' CNombreDeLaClase "1" o-- "0..*" COtraClase : agregación
+' CNombreDeLaClase "1" --> "1" COtraClase : asociación
+' CNombreDeLaClase ..> COtraClase : dependencia
+' CClaseHija --|> CClasePadre : herencia
+' CClase ..|> IInterfaz : realización
+@enduml

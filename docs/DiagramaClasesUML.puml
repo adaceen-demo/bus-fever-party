@@ -1,0 +1,57 @@
+' Diagrama de clases BASE (pegar en https://plantuml.com/ para visualizarlo).
+' Solo muestra las capas y las clases del repositorio base. Cada grupo lo completa
+' con sus atributos, métodos, relaciones y multiplicidades (primera entrega).
+@startuml
+title Bus Fever Party! FPOO C++ Edition - esqueleto MVC
+
+package "Vista" {
+  class CVistaConsola {
+  - entrada: istream&
+  - salida: ostream&
+  + mostrarMensaje(mensaje)
+  ' TODO: mostrarTablero, mostrarFila, leerJugada...
+  }
+}
+
+package "Controlador" {
+  class CControladorJuego {
+  - vista: CVistaConsola&
+  - rutaNivel: string
+  + ejecutar()
+  }
+}
+
+package "Modelo" {
+  class CCargadorNivel {
+  - error: string
+  + cargar(ruta, datos): bool
+  + cargarDesde(entrada, datos): bool
+  + getError(): string
+  + {static} esColorValido(color): bool
+  + {static} esDireccionValida(direccion): bool
+  }
+  class SDatosNivel <<struct>>
+  class SDatosVehiculo <<struct>>
+  class CJuego
+  class CTablero
+  class CVehiculo
+  class CFila
+  class CPasajero
+}
+
+CControladorJuego --> CVistaConsola : usa
+CControladorJuego ..> CCargadorNivel : usa
+CControladorJuego ..> CJuego : TODO
+CCargadorNivel ..> SDatosNivel : llena
+SDatosNivel *-- SDatosVehiculo
+
+' TODO (grupo): relaciones del Modelo con su tipo y multiplicidad. Ejemplos:
+' CJuego "1" *-- "1" CTablero
+' CTablero ?-- CVehiculo
+' CFila ?-- CPasajero
+
+note bottom of CJuego
+  El Modelo no conoce a la Vista ni al Controlador
+  y no usa cin ni cout.
+end note
+@enduml
